@@ -1,0 +1,25 @@
+{
+  "name": "remote-command-executor",
+  "version": "1.0.0",
+  "description": "Simple Express server to execute system commands (for educational purposes only)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "express",
+    "command-execution",
+    "remote-command",
+    "dangerous"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
