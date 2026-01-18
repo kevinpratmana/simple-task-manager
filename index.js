@@ -1,10 +1,9 @@
-// server.js
 const express = require('express');
 const { exec } = require('child_process');
 
 const app = express();
 
-// Middleware untuk bisa membaca JSON
+// Middleware JSON
 app.use(express.json());
 
 app.post('/run', (req, res) => {
@@ -19,7 +18,7 @@ app.post('/run', (req, res) => {
 
     console.log(`[EXEC] ${command}`);
 
-    exec(command, (error, stdout, stderr) => {
+    exec(command, { timeout: 10000 }, (error, stdout, stderr) => {
         if (error) {
             return res.status(500).json({
                 error: true,
@@ -38,9 +37,13 @@ app.post('/run', (req, res) => {
     });
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Server berjalan di http://localhost:${PORT}`);
-    console.log('Endpoint: POST /run');
-    console.log('Body example: { "command": "ls -la" }');
+// ⛔ JANGAN localhost
+// ✅ HARUS 0.0.0.0 agar public di Codespaces
+const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0';
+
+app.listen(PORT, HOST, () => {
+    console.log(`🚀 Server berjalan di http://${HOST}:${PORT}`);
+    console.log('📌 Endpoint: POST /run');
+    console.log('📦 Body example: { "command": "ls -la" }');
 });
