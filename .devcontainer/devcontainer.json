@@ -1,24 +1,27 @@
 {
-    "name": "Codespace Command Executor",
-  
-    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
-  
-    "features": {
-      "ghcr.io/devcontainers/features/node:1": {
-        "version": "20"
-      }
-    },
-  
-    "forwardPorts": [3000],
-  
-    "portsAttributes": {
-      "3000": {
-        "label": "Command API",
-        "visibility": "public",
-        "onAutoForward": "notify"
-      }
-    },
-  
-    "postCreateCommand": "npm install",
-    "postStartCommand": "node index.js"
-  }
+  "name": "Codespace Node App",
+
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "forwardPorts": [3000],
+
+  "portsAttributes": {
+    "3000": {
+      "label": "Node App",
+      "visibility": "public",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "postCreateCommand": "[ -d node_modules ] || npm install",
+
+  "postAttachCommand": "npm start"
+}
