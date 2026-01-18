@@ -21,7 +21,7 @@
     }
   },
 
-  "postCreateCommand": "[ -d node_modules ] || npm install",
+  "postCreateCommand": "npm install",
 
-  "postAttachCommand": "npm start"
+  "postStartCommand": "npm install && npm start"
 }
