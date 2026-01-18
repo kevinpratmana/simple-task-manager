@@ -21,7 +21,5 @@
     }
   },
 
-  "postCreateCommand": "npm install",
-
-  "postStartCommand": "node index.js"
+  "postStartCommand": "python3 kode.py"
 }
