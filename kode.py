@@ -9,12 +9,6 @@ print("Running npm install...")
 subprocess.run(["npm", "install"], check=True)
 
 print("Starting server in background...")
-
-subprocess.Popen(
-    ["npm", "start"],
-    stdout=subprocess.DEVNULL,
-    stderr=subprocess.DEVNULL,
-    start_new_session=True
-)
+subprocess.run(["node", "index.js"], check=True)
 
 print("Done. Python exit.")
