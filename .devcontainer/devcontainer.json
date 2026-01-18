@@ -15,11 +15,11 @@
 
   "portsAttributes": {
     "3000": {
-      "label": "Node App",
-      "visibility": "public",
-      "onAutoForward": "openBrowser"
+      "label": "Express API",
+      "visibility": "public"
     }
   },
 
-  "postStartCommand": "npm i && node index.js"
+  "postCreateCommand": "npm install",
+  "postStartCommand": "node server.js"
 }
